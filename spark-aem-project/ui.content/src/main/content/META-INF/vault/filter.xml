@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<workspaceFilter version="1.0">
+    <filter root="/conf/spark" mode="merge"/>
+    <filter root="/content/spark" mode="merge"/>
+    <filter root="/content/dam/spark/asset.jpg" mode="merge"/>
+    <filter root="/content/experience-fragments/spark" mode="merge"/>
+</workspaceFilter>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    cq:dialogMode="floating"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Properties"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <main
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/form">
+                <items jcr:primaryType="nt:unstructured">
+                    <city
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="City Name"
+                        name="./city"
+                        required="true"/>
+                    <unit
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                        defaultValue="metric"
+                        fieldLabel="Temperature Unit"
+                        name="./unit">
+                        <items jcr:primaryType="nt:unstructured">
+                            <metric
+                                jcr:primaryType="nt:unstructured"
+                                text="Celsius"
+                                value="metric"/>
+                            <imperial
+                                jcr:primaryType="nt:unstructured"
+                                text="Fahrenheit"
+                                value="imperial"/>
+                        </items>
+                    </unit>
+                </items>
+            </main>
+        </items>
+    </content>
+</jcr:root>
