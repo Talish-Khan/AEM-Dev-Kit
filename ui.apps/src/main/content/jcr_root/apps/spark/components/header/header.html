@@ -1,0 +1,26 @@
+<sly data-sly-use.clientlib="/libs/granite/sightly/templates/clientlib.html"></sly>
+  <sly data-sly-call="${clientlib.all @ categories='spark.header'}"></sly>
+
+  <header class="header">
+    <a href="${properties.logoLink}">
+      <img class="logo" src="${properties.logoImage}" alt="Omnifood" />
+    </a>
+  
+    <nav class="main-nav">
+      <ul class="main-nav-list">
+        <sly data-sly-list.item="${resource.children}">
+        <sly data-sly-repeat.navItems="${item.children}">
+          <li>
+            <a class="main-nav-link" href="${navItems.link}">${navItems.text}</a>
+          </li>
+        </sly>
+        </sly>
+      </ul>
+    </nav>
+  
+    <button class="btn-mobile-nav">
+      <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+      <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon>
+    </button>
+  </header>
+

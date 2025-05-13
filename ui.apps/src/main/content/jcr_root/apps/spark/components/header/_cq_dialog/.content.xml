@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0"
+    cq:dialogMode="floating"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="Header Component"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <main
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Main"
+                sling:resourceType="granite/ui/components/coral/foundation/form/fieldset">
+                <items jcr:primaryType="nt:unstructured">
+                    <logoImage
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                        fieldLabel="Logo Image"
+                        name="./logoImage"
+                        rootPath="/content/dam"/>
+                    <logoLink
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                        fieldLabel="Logo Link"
+                        name="./logoLink"/>
+                    <navItems
+                        jcr:primaryType="nt:unstructured"
+                        sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
+                        composite="{Boolean}true"
+                        fieldLabel="Navigation Links">
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/container"
+                            name="./navItems">
+                            <items jcr:primaryType="nt:unstructured">
+                                <text
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Link Text"
+                                    name="./text"/>
+                                <link
+                                    jcr:primaryType="nt:unstructured"
+                                    sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
+                                    fieldLabel="Anchor Link"
+                                    name="./link"/>
+                            </items>
+                        </field>
+                    </navItems>
+                </items>
+            </main>
+        </items>
+    </content>
+</jcr:root>
