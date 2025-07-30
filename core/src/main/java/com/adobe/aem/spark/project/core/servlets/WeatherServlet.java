@@ -1,11 +1,15 @@
 package com.adobe.aem.spark.project.core.servlets;
 
+import com.adobe.aem.spark.project.core.services.configs.WeatherApiConfig;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
+import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Modified;
+import org.osgi.service.metatype.annotations.Designate;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
@@ -20,9 +24,17 @@ import java.net.URL;
                 "sling.servlet.paths=/bin/weather",
                 "sling.servlet.methods=GET"
         })
+@Designate(ocd = WeatherApiConfig.class)
 public class WeatherServlet extends SlingAllMethodsServlet {
 
-    private static final String API_KEY = "9b054bfdf561cdeecb6e520b1d369e8c";
+    private String API_KEY ;
+
+    @Activate
+    @Modified
+    protected void activate(WeatherApiConfig config) {
+        this.API_KEY = config.apiKey();
+    }
+
 
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response)
