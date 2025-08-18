@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 
 import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
+import org.apache.sling.api.servlets.HttpConstants;
 import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 import org.apache.sling.servlets.annotations.SlingServletResourceTypes;
 import org.osgi.service.component.annotations.Component;
@@ -27,7 +28,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @Component(service = Servlet.class)
 @SlingServletResourceTypes(resourceTypes = { "spark/components/page" },
 selectors = {"query"},
-extensions = {"json"})
+extensions = {"json"},
+methods = {HttpConstants.METHOD_GET})
 public class QueryBuilderDemo extends SlingSafeMethodsServlet {
 
     @Reference
