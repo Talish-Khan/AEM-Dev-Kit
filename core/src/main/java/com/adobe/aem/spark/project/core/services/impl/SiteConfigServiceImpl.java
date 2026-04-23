@@ -1,10 +1,11 @@
-package com.adobe.aem.spark.project.core.services;
+package com.adobe.aem.spark.project.core.services.impl;
 
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
 import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.metatype.annotations.Designate;
 
+import com.adobe.aem.spark.project.core.services.SiteConfigService;
 import com.adobe.aem.spark.project.core.services.configs.SiteConfigConfigurations;
 
 

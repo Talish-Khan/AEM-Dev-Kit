@@ -23,6 +23,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component(service = Servlet.class)
 @SlingServletResourceTypes(resourceTypes = { "spark/components/page" },
+selectors ={ "page"},
 extensions = {"json"},
 methods = {HttpConstants.METHOD_GET}
 )
